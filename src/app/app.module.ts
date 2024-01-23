@@ -8,11 +8,19 @@ import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+
+
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -24,7 +32,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       preventDuplicates:true
       }),
       NgxPaginationModule,
-      Ng2SearchPipeModule
+      Ng2SearchPipeModule,
+      HttpClientModule,
+      FormsModule
+    
       
   ],
   providers: [],

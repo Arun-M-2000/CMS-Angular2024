@@ -29,9 +29,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
-              "node_modules/ngx-toastr/toastr.css" 
-
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -126,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "FinalProjectFE"
+    }
+  },
+  "defaultProject": "FinalProjectFE",
+  "cli": {
+    "analytics": "b123d6b7-35e3-4008-8b60-260e23966671"
+  }
 }

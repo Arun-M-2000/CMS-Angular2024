@@ -3,13 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { PPharmacistRoutingModule } from './p-pharmacist-routing.module';
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
+import { MedicineListComponent } from './pharmacist/medicine-list/medicine-list.component';
+import { PatientVMListComponent } from './pharmacist/patient-vm-list/patient-vm-list.component';
+import { PatientMedicineVMListComponent } from './pharmacist/patient-medicine-vm-list/patient-medicine-vm-list.component';
+import { FormsModule } from '@angular/forms';
+
+import { HomeComponent } from './pharmacist/home/home.component';
+
 
 
 @NgModule({
-  declarations: [PharmacistComponent],
+  declarations: [ PharmacistComponent,MedicineListComponent, PatientVMListComponent, PatientMedicineVMListComponent, HomeComponent],
   imports: [
     CommonModule,
-    PPharmacistRoutingModule
+    PPharmacistRoutingModule,
+    FormsModule
   ]
 })
 export class PPharmacistModule { }
