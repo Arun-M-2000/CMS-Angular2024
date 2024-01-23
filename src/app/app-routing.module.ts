@@ -16,6 +16,7 @@ import { PatientComponent } from './r-patient/patient/patient.component';
 
 const routes: Routes = [
 
+   
   {path:'a-lab',component:LabComponent,
   loadChildren:()=>import('./a-lab/a-lab.module').then(x=>x.ALabModule)
   },
