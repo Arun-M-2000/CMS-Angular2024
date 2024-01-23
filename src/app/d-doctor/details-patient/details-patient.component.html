@@ -1,0 +1,56 @@
+
+<body>
+
+  <div class="container">
+    <h2 class="mb-4 text-center" style="font-size: 30px;font-weight:bold; margin: 30px;">Patient Details</h2>
+    <table class="table table-bordered table-striped" style="margin-bottom:150px;">
+      <thead class="thead-dark bg-danger text-white">
+        <tr>
+          <th>AppointmentId</th>
+          <th>PatientName</th>
+          <th>Gender</th>
+          <th>PatientAge</th>
+          <th>BloodGroup</th>
+          <th>PhoneNumber</th>
+          <th>CheckUpStatus</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr>
+          <td>{{ patientview.patdetails.Appointment_Id }}</td>
+          <td>{{ patientview.patdetails.Patient_Name }}</td>
+          <td>{{ patientview.patdetails.Gender }}</td>
+          <td>{{ patientview.patdetails.PatientAge }}</td>
+          <td>{{ patientview.patdetails.BloodGroup }}</td>
+          <td>{{ patientview.patdetails.PhoneNumber }}</td>
+          <td>{{ patientview.patdetails.AppointmentStatus }}</td> 
+          <!-- <td>
+            <button class="btn btn-info">Edit</button>
+            <button class="btn btn-sm btn-outline-danger" style="margin-left: 10px;">Delete</button>
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="mx-2">
+      <button class="btn btn-info btn-danger" (click)="back()">Back</button>
+    </div>
+  
+    <div class="mx-2">
+      <button class="btn btn-info btn-danger" (click)="history(patientview.patdetails.PatientId)">View History</button>
+    </div>
+  
+    <div class="mx-2">
+      <button class="btn btn-info btn-danger" (click)="goto(patientview.patdetails.Appointment_Id)">Start Diagnosis</button>
+    </div>
+  </div>
+  
+<!-- <div>
+  <button class="diagnosis" (click)="AddDiagnosis(patient.Appointment_Id)">Add Diagnosis</button>
+
+</div> -->
+ 
