@@ -64,7 +64,7 @@ logincredentials() {
           console.log('Admin')
         }
         else if (response.rId == 2) {
-          this.router.navigateByUrl('receptionist');
+          this.router.navigateByUrl('r-patient/list-patient');
           console.log('receptionist')
         }
 
