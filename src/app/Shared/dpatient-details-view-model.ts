@@ -2,6 +2,7 @@ export class DPatientDetailsViewModel {
 
 
     Appointment_Id: number=0;
+    PatientId:number=0;
     Patient_Name: string=null;
     Gender: string=null;
     PatientAge: number=0;
