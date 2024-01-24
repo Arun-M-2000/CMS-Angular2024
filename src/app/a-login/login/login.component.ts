@@ -60,7 +60,7 @@ logincredentials() {
           this.error = "Invaild user or password";
         }
         else if (response.rId == 1) {
-          this.router.navigateByUrl('login');
+          this.router.navigateByUrl('a-home/adminhome');
           console.log('Admin')
         }
         else if (response.rId == 2) {
@@ -73,8 +73,8 @@ logincredentials() {
           console.log('Admin')
         }
         else if (response.rId == 4) {
-          this.router.navigateByUrl('receptionist');
-          console.log('receptionist')
+          this.router.navigateByUrl('l-laboratory/list');
+          console.log('laboratory')
         }
         else if (response.rId == 5) {
           this.router.navigateByUrl('p-pharmacist/home');

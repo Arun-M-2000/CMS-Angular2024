@@ -15,7 +15,7 @@ export class LabService {
 
   constructor(private httpClient:HttpClient) { }
   BindListLab(){
-    this.httpClient.get(environment.apiUrl+"api/ALab")
+    this.httpClient.get(environment.apiUrl+"/api/ALab")
     .toPromise().then(response=>
       {
       this.lab=response as Lab[];
@@ -24,21 +24,21 @@ export class LabService {
 }
 // add lab
 insertLabTest(lb: Lab): Observable<any> {
-  return this.httpClient.post(environment.apiUrl + "api/ALab",lb);
+  return this.httpClient.post(environment.apiUrl + "/api/ALab",lb);
 
 }
 
 //Get Lab
 getLab(testId:number):Observable<any>
 {
-  return this.httpClient.get(environment.apiUrl+"api/ALab/"+testId)
+  return this.httpClient.get(environment.apiUrl+"/api/ALab/"+testId)
 }
 
 updateLab(lab:Lab):Observable<any>{
-  return this.httpClient.put(environment.apiUrl + "api/alab/",lab);
+  return this.httpClient.put(environment.apiUrl + "/api/alab/",lab);
 }
 
 deleteLab(id:number){
-  return this.httpClient.delete(environment.apiUrl + "api/ALab/"+id);
+  return this.httpClient.delete(environment.apiUrl + "/api/ALab/"+id);
 }
 }

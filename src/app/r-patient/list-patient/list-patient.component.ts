@@ -39,7 +39,7 @@ export class ListPatientComponent implements OnInit {
        this.router.navigate(['r-appointment/book'])
   }
 
-  
+
 
 
   //Open confirmation dialog
@@ -112,6 +112,14 @@ enablePatientRecords(patientId: number) {
       // Handle error as needed
     }
   );
+}
+
+
+deleteMedicine(index: number): void {
+  // Remove the item from the array
+  this.patientServices.patients.splice(index, 1);
+  // Optionally, you can also call an API to delete the item from the server
+  // this.medicineService.deleteMedicine(this.medicineService.medicine[index].MedicineId);
 }
 
 }

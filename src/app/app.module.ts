@@ -12,8 +12,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
-import { FormsModule } from '@angular/forms';
-
 
 
 
@@ -27,9 +25,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
 
-import { ReactiveFormsModule } from '@angular/forms';
-
-import { FormsModule } from '@angular/forms';
 
 
 

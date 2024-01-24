@@ -33,7 +33,7 @@ static formData: StaffDetailsViewModel;
 constructor( private httpClient:HttpClient) { }
 
 BindListStaffs() {
-  this.httpClient.get(environment.apiUrl + "api/AStaff")
+  this.httpClient.get(environment.apiUrl + "/api/AStaff")
     .toPromise().then(response => {
       this.staffdetailsviewmodel = response as StaffDetailsViewModel[];
       console.log(this.staffdetailsviewmodel);
@@ -41,14 +41,14 @@ BindListStaffs() {
     });
 }
 insertstaff(staffVm: StaffDetailsViewModel): Observable<any> {
-  return this.httpClient.post(environment.apiUrl + "api/AStaff",staffVm);
+  return this.httpClient.post(environment.apiUrl + "/api/AStaff",staffVm);
 
 }
 
 //Get Lab
 getstaff(StaffId:number):Observable<any>
 {
-  return this.httpClient.get(environment.apiUrl+"api/AStaff/"+StaffId)
+  return this.httpClient.get(environment.apiUrl+"/api/AStaff/"+StaffId)
 }
 
 

@@ -19,7 +19,7 @@ export class MedicineService {
   constructor( private httpClient:HttpClient){} 
 
   BindListMedicine(){
-    this.httpClient.get(environment.apiUrl+"api/AMedicine")
+    this.httpClient.get(environment.apiUrl+"/api/amedicine")
     .toPromise().then(response=>
       {
       this.medicine=response as Medicine[];
@@ -28,22 +28,22 @@ export class MedicineService {
 }
 
 insertMedicine(med: Medicine): Observable<any> {
-  return this.httpClient.post(environment.apiUrl + "api/AMedicine",med);
+  return this.httpClient.post(environment.apiUrl + "/api/amedicine",med);
 
 }
 
 //Get Lab
 getMedicine(medicineId:number):Observable<any>
 {
-  return this.httpClient.get(environment.apiUrl+"api/AMedicine/"+medicineId)
+  return this.httpClient.get(environment.apiUrl+"/api/amedicine/"+medicineId)
 }
 
 updateMedicine(medId:Medicine):Observable<any>{
-  return this.httpClient.put(environment.apiUrl + "api/AMedicine/",medId);
+  return this.httpClient.put(environment.apiUrl + "/api/amedicine/",medId);
 }
 
 deleteMedicine(id:number){
-  return this.httpClient.delete(environment.apiUrl + "api/AMedicine/"+id);
+  return this.httpClient.delete(environment.apiUrl + "/api/amedicine/"+id);
 }
 }
 

@@ -20,7 +20,7 @@ export class StaffService {
   
   
   updatestaff(staff: Staff):Observable<any>{
-    return this.httpClient.put(environment.apiUrl + "api/AStaff/",staff);
+    return this.httpClient.put(environment.apiUrl + "/api/AStaff/",staff);
   }
   
   

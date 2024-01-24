@@ -14,6 +14,7 @@ import { AppointmentComponent } from './r-appointment/appointment/appointment.co
 import { PatientComponent } from './r-patient/patient/patient.component';
 
 import{HomeComponent} from './a-home/home/home.component'
+import { LaboratoryComponent } from './l-laboratory/laboratory/laboratory.component';
 
 const routes: Routes = [
   {path:'a-home',component:HomeComponent,
@@ -38,7 +39,7 @@ const routes: Routes = [
   },
 
   //need to change module to component
-  {path:'l-laboratory',component:LLaboratoryModule,
+  {path:'l-laboratory',component:LaboratoryComponent,
 
   loadChildren:()=>import('./l-laboratory/l-laboratory.module').then(x=>x.LLaboratoryModule)
   },
