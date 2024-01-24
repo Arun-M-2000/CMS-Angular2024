@@ -1,0 +1,69 @@
+<div class="container">
+    <br><h1>PATIENT PRESCRIPTION</h1>
+    <br>
+    <br>
+    <table class="table table-striped table-hover">
+      <!-- Table headers here -->
+      <thead>
+        <tr>
+          <th>RegNo</th>
+          <th>PatientName</th>
+          <th>PrescribedMedicine</th>
+          <th>Dosage</th>
+          <th>DosageDays</th>
+          <th>MedicineQuantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows here -->
+        <tr *ngFor="let pat of ppatientsMedViewModelService.patients">
+          <td>{{pat.RegNo}}</td>
+          <td>{{pat.PatientName}}</td>
+          <td>{{pat.PrescribedMedicine}}</td>
+          <td>{{pat.Dosage}}</td>
+          <td>{{pat.DosageDays}}</td>
+          <td>{{pat.MedicineQuantity}}</td>
+          <td>
+            <button class="btn btn-primary" (click)="generateBill(pat)">Generate Bill</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+ 
+    <div *ngIf="showBillModal" id="billModal" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeBillModal()">&times;</span>
+        <h2>Bill Details</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <p>Date: {{ billDetails.billDate }}</p>
+            <p>Patient Name: {{ billDetails.patientName }}</p>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Medicine Name</th>
+              <th>Quantity</th>
+              <th>Unit Price (Rs.)</th>
+              <th>GST (8%) (Rs.)</th>
+              <th>Total Price (Rs.)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ billDetails.medicineName }}</td>
+              <td>{{ billDetails.quantity }}</td>
+              <td>{{ billDetails.unitPrice | currency: 'INR' }}</td>
+              <td>{{ billDetails.gst | currency: 'INR' }}</td>
+              <td>{{ billDetails.totalPrice | currency: 'INR' }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button (click)="printBill()" class="btn btn-primary">Print</button>
+      </div>
+    </div> 
+    
+
+    

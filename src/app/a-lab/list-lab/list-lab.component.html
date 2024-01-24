@@ -1,0 +1,42 @@
+
+
+<div class="container">
+    <h2 style="text-align: center;">Lab Management</h2><br>
+    <div class="header">
+        <div class="form-control">
+            <input class="form-control" type="text"placeholder="search text here..."
+            [(ngModel)]="filter">
+        </div><br>
+        <a [routerLink]="['../add-lab']" class="btn btn-success" style="float: right; margin-bottom: 30px;">Add LabTest</a>
+    </div>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>TestId</th>
+            <th>TestName</th>
+            <th>LowRange</th>
+            <th>HighRange</th>
+            <th>TestPrice</th>
+           
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let lab of labService.lab | filter: filter | paginate: { itemsPerPage: 8, currentPage: page }" [class.disabled-row]="lab.isDisabled">
+            <td>{{ lab.TestId }}</td>
+            <td>{{ lab.TestName }}</td>
+            <td>{{ lab.LowRange }}</td>
+            <td>{{ lab.HighRange }}</td>
+            <td>{{ lab.Price }}</td>
+            <td>
+                <button class="btn btn-sm btn-info" (click)="UpdateLab(lab.TestId)">Edit</button>&nbsp;
+                <button class="btn btn-sm btn-danger"  (click)="Deletelab(lab.TestId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="footer" style="text-align: center;">
+    <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+</div>

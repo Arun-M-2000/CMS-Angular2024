@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="container mx-auto" style="max-width: 500px; margin-top: 100px; margin-bottom:100px;">
+    <h2 style="text-align: center;">User Login</h2>
+    <hr>
+    <form [formGroup]="loginForm" class="formControl" (ngSubmit)="logincredentials()">
+      <!-- username -->
+      <div class="mb-3">
+        <label for="UserName" class="form-label">User Name</label>
+        <input type="text" placeholder="Enter username" name="UserName" formControlName="UserName" class="form-control" minlength="3" [ngClass]="{'is-invalid': formControls.UserName.touched && formControls.UserName.invalid}">
+        <div *ngIf="isSubmitted && formControls.UserName.errors" class="invalid-feedback">
+          <div *ngIf="formControls.UserName.errors.required">
+            User Name is required
+          </div>
+        </div>
+      </div>
+  
+      <!-- Password -->
+      <div class="mb-3">
+        <label for="Password" class="form-label">Password</label>
+        <input type="password" placeholder="Enter Password" name="Password" formControlName="Password" class="form-control" minlength="3" [ngClass]="{'is-invalid': formControls.Password.touched && formControls.Password.invalid}">
+        <div *ngIf="isSubmitted && formControls.Password.errors" class="invalid-feedback">
+          <div *ngIf="formControls.Password.errors.required">
+            Password is required
+          </div>
+        </div>
+      </div>
+  
+      <!-- Login button -->
+      <button type="submit" class="btn btn-primary">Login</button>
+  
+      <div *ngIf="error" style="color:red; text-align: left;">
+        {{ error }}
+      </div>
+    </form>
+  </div>
+  

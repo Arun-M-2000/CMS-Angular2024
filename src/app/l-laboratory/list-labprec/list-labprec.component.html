@@ -1,0 +1,31 @@
+<div class="container">
+    <h2
+        style="text-align:center;font-size:200%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 50px; letter-spacing: 2px;margin-top: 50px;">
+        {{title}}</h2>
+</div>
+<table class="table table-bordered table-striped" style="margin-top: 80px;">
+    <thead style="background-color: red;color: white;">
+        <tr>
+            <th>ID</th>
+            <th>PatientName</th>
+            <th>DoctorName</th>
+            <th>TestName</th>
+            <th>TestStatus</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let lab of lPrescriptionViewModelService.lPrescriptionVM;
+        ">
+        <td>{{lab.AppointmentId}}</td>
+        <td>{{lab.PatientName}}</td>
+        <td>{{lab.DoctorName}}</td>
+        <td>{{lab.TestName}}</td>
+        <td>{{lab.LabTestStatus}}</td>
+        <td>
+            <button class="btn btn-info" (click)="generateReport(lab)" >Generate</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div><button (click)="goBack()">Back</button></div>

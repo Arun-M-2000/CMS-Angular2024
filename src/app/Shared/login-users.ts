@@ -1,7 +1,9 @@
 export class LoginUsers {
 
-    LoginId: number=0;
+LoginId: number=0;
 UserName: String='';
 Password: String='';
-RoleId: number=0;
+rId: number=0;
+
+
 }

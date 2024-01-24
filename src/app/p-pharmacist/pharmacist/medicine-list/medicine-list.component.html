@@ -1,0 +1,47 @@
+<div class="container">
+  <br><h1>MEDICINE MANAGEMENT</h1>
+  <br>
+  <br>
+
+  <div class="header">
+    <div class="form-control">
+      <input class="form-control" (input)="searchMedicines()" type="text" placeholder="Search text here...." [(ngModel)]="searchTerm">
+    </div>
+  </div>
+
+  <table *ngIf="medicinesFound" class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>MedicineCode</th>
+        <th>MedicineName</th>
+        <th>GenericName</th>
+        <th>CompanyName</th>
+        <th>StockQuantity</th>
+        <th>UnitPrice</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let med of pharmacymedicineService.filteredMedicines" [ngClass]="{'low-stock': med.StockQuantity <= 10}">
+        <td>{{med.MedicineCode}}</td>
+        <td>{{med.MedicineName}}</td>
+        <td>{{med.GenericName}}</td>
+        <td>{{med.CompanyName}}</td>
+        <td [ngStyle]="{'color': med.StockQuantity <= 10 ? 'red' : 'black'}">{{med.StockQuantity}}</td>
+        <td>{{med.UnitPrice}}</td>
+        <td>
+          <button class="btn btn-primary" 
+                  [ngClass]="{'reorder-btn': med.StockQuantity <= 10 && !med.reordered, 'reordered-btn': med.reordered}" 
+                  [disabled]="med.StockQuantity > 10 || med.reordered" 
+                  (click)="reorderMedicine(med)">
+            {{ med.reordered ? 'Reordered' : 'Reorder' }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!medicinesFound">
+    No matching medicines found.
+  </div>
+</div>

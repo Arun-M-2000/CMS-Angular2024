@@ -1,0 +1,43 @@
+
+<div class="container">
+  <br><h1>PATIENTS LIST</h1>
+<br>
+<br>
+
+  <div class="header">
+    <div class="form-control">
+      <input class="form-control" (input)="searchPatients()" type="text" placeholder="Search text here...." [(ngModel)]="searchTerm">
+    </div>
+  </div>
+
+  <table *ngIf="patientsFound" class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>RegNo</th>
+        <th>PatientName</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>PhNo</th>
+        <th>DoctorName</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pat of ppatientsViewModelService.filteredPatients">
+        <td>{{pat.RegNo}}</td>
+        <td>{{pat.PatientName}}</td>
+        <td>{{pat.Age}}</td>
+        <td>{{pat.Gender}}</td>
+        <td>{{pat.PhNo}}</td>
+        <td>{{pat.DoctorName}}</td>
+        <td>
+          <button class="btn btn-primary"(click)=view(pat.AppointmentId)>View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!patientsFound">
+    No matching patients found.
+  </div>
+</div>
