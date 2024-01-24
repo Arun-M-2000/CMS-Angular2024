@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'medicine-list',component:MedicineListComponent},
   {path:'patient-list',component:PatientVMListComponent},
-  {path:'patientmedicine-list',component:PatientMedicineVMListComponent}
+  {path:'patientmedicine-list/:AppointmentId',component:PatientMedicineVMListComponent}
   // Example route configuration
 //{ path: 'patient-medicine-vm-list/:regNo', component: PatientMedicineVMListComponent }
 

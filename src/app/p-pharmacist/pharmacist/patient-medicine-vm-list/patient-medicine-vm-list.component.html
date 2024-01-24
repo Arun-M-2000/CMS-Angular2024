@@ -30,13 +30,11 @@
         </tr>
       </tbody>
     </table>
-  
-    <!-- Bill Modal -->
+ 
     <div *ngIf="showBillModal" id="billModal" class="modal">
       <div class="modal-content">
         <span class="close" (click)="closeBillModal()">&times;</span>
         <h2>Bill Details</h2>
-        <!-- Bill details content here -->
         <div class="row">
           <div class="col-md-6">
             <p>Date: {{ billDetails.billDate }}</p>
@@ -44,7 +42,6 @@
           </div>
         </div>
         <table class="table">
-          <!-- Bill table headers here -->
           <thead>
             <tr>
               <th>Medicine Name</th>
@@ -55,7 +52,6 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Bill table rows here -->
             <tr>
               <td>{{ billDetails.medicineName }}</td>
               <td>{{ billDetails.quantity }}</td>
@@ -67,6 +63,7 @@
         </table>
         <button (click)="printBill()" class="btn btn-primary">Print</button>
       </div>
-    </div>
-  </div>
-  
+    </div> 
+    
+
+    

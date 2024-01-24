@@ -21,8 +21,18 @@ export class PPatientsMedViewModelService {
   }
 
   // Fetch all patient medicine details
-  BindListPatientMedicine(): Observable<PPatientsMedViewModel[]> {
-    const url = `${environment.apiUrl}/api/PPatientsMed/ViewModelGetPatientsMedList`;
-    return this.httpClient.get<PPatientsMedViewModel[]>(url);
+  // BindListPatientMedicine(appointmentID:number): Observable<PPatientsMedViewModel[]> {
+  //   const url = `${environment.apiUrl}/api/PPatientsMed/ViewModelGetPatientsMedList/`+appointmentID;
+  //   return this.httpClient.get<PPatientsMedViewModel[]>(url);
+  // }
+
+  BindListPatientMedicine(appointmentID:number) {
+    this.httpClient.get(environment.apiUrl + "/api/PPatientsMed/ViewModelGetPatientsMedList?appointmentID="+appointmentID)
+      .toPromise().then(response =>{
+        this.patients = response as PPatientsMedViewModel[];
+        console.log(this.patients);
+      });
   }
+
+
 }

@@ -77,7 +77,7 @@ logincredentials() {
           console.log('receptionist')
         }
         else if (response.rId == 5) {
-          this.router.navigateByUrl('receptionist');
+          this.router.navigateByUrl('p-pharmacist/home');
           console.log('receptionist')
         }
         else {

@@ -1,3 +1,16 @@
+<style>
+
+.form-container {
+  max-width: 700px;
+  margin: auto; /* Center the form horizontally */
+}
+
+
+</style>
+
+
+<div class="form-container">
+
 <form name="empForm" #addForm="ngForm" autocomplete="false" (ngSubmit)="OnSubmit(addForm)">
 
     <input type="hidden" name="DiagnosisId" [(ngModel)]="diagnosisService.formData.DiagnosisId">
@@ -112,9 +125,11 @@
         class="btn btn-lg btn-primary form-control">Complete Diagnosis</button>
     </div>
   
-    <div>
-      <button class="details" (click)="ViewPatientDetails()">Back</button>
+    <div class="d-flex justify-content-end" style="margin:20px;">
+      <button  class="details btn btn-info btn-danger " (click)="ViewPatientDetails()">Back</button>
     </div>
   
   
   </form>
+
+</div>
