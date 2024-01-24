@@ -41,26 +41,25 @@
 </head>
 <body>
 
-<div class="container">
-    <h2>Appointment Booking</h2>
-    <form id="appointmentForm">
-        <label for="patientId">Patient ID:</label>
-        <input type="text" id="patientId" name="patientId" required>
-
-        <label for="doctorId">Doctor Name:</label>
-        <input type="text" id="doctorId" name="doctorId" required>
-
-        <label for="appointmentDate">Appointment Date:</label>
-        <input type="date" id="appointmentDate" name="appointmentDate" required>
-
-        <label for="appointmentTime">Appointment Time:</label>
-        <input type="time" id="appointmentTime" name="appointmentTime" required>
-
-        <button type="button" onclick="bookAppointment()">Book Appointment</button>
-        <button type="button" onclick="back()">Back</button>
-        
-    </form>
-</div>
+    <div class="container">
+        <h2>Appointment Booking</h2>
+        <form id="appointmentForm">
+            <label for="patientId">Patient ID:</label>
+            <input type="text" id="patientId" name="patientId" value="1006" readonly>
+    
+            <label for="doctorId">Doctor Name:</label>
+            <input type="text" id="doctorId" name="doctorId" value="Arun" readonly>
+    
+            <label for="appointmentDate">Appointment Date:</label>
+            <input type="date" id="appointmentDate" name="appointmentDate" required>
+    
+            <label for="appointmentTime">Appointment Time:</label>
+            <input type="time" id="appointmentTime" name="appointmentTime" required>
+    
+            <button type="button" onclick="bookAppointment()">Book Appointment</button>
+            <button type="button" onclick="back()">Back</button>
+        </form>
+    </div>
 
 <script>
     function bookAppointment() {
