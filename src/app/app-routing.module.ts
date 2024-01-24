@@ -13,10 +13,14 @@ import { PharmacistComponent } from './p-pharmacist/pharmacist/pharmacist.compon
 import { AppointmentComponent } from './r-appointment/appointment/appointment.component';
 import { PatientComponent } from './r-patient/patient/patient.component';
 
+import{HomeComponent} from './a-home/home/home.component'
 
 const routes: Routes = [
+  {path:'a-home',component:HomeComponent,
+  loadChildren:()=>import('./a-home/a-home.module').then(x=>x.AHomeModule)
+  },
 
-   
+
   {path:'a-lab',component:LabComponent,
   loadChildren:()=>import('./a-lab/a-lab.module').then(x=>x.ALabModule)
   },
@@ -32,8 +36,10 @@ const routes: Routes = [
   {path:'d-doctor',component:DoctorComponent,
   loadChildren:()=>import('./d-doctor/d-doctor.module').then(x=>x.DDoctorModule)
   },
+
   //need to change module to component
   {path:'l-laboratory',component:LLaboratoryModule,
+
   loadChildren:()=>import('./l-laboratory/l-laboratory.module').then(x=>x.LLaboratoryModule)
   },
   {path:'p-pharmacist',component:PharmacistComponent,
