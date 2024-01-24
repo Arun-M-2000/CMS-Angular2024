@@ -4,10 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 //Need to import
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,10 +22,17 @@ import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
     AppComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -33,6 +43,7 @@ import { CommonModule } from '@angular/common';
         positionClass: 'toast-top-right',
         preventDuplicates: true
       }),
+
     NgxPaginationModule,
     Ng2SearchPipeModule,
     HttpClientModule,
@@ -46,6 +57,10 @@ import { CommonModule } from '@angular/common';
     MatNativeDateModule,
     MatSelectModule,
     CommonModule
+ 
+      ReactiveFormsModule,
+
+      FormsModule
 
   ],
   providers: [],
