@@ -35,6 +35,12 @@ export class ListPatientComponent implements OnInit {
 
   }
 
+  bookAppointment(PatientId : number) {
+       this.router.navigate(['r-appointment/book'])
+  }
+
+  
+
 
   //Open confirmation dialog
 // openConfirmationDialog(patientId: number): void {
