@@ -8,6 +8,16 @@ import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -19,13 +29,24 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AppRoutingModule,
     ToastrModule.forRoot(
       {
-      timeOut:10000,
-      positionClass:'toast-top-right',
-      preventDuplicates:true
+        timeOut: 10000,
+        positionClass: 'toast-top-right',
+        preventDuplicates: true
       }),
-      NgxPaginationModule,
-      Ng2SearchPipeModule
-      
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    CommonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
