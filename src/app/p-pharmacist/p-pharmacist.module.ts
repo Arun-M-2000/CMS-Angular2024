@@ -9,12 +9,12 @@ import { PatientMedicineVMListComponent } from './pharmacist/patient-medicine-vm
 import { FormsModule } from '@angular/forms';
 
 import { HomeComponent } from './pharmacist/home/home.component';
-import { PPharmacistBillComponent } from './p-pharmacist-bill/p-pharmacist-bill.component';
+
 
 
 
 @NgModule({
-  declarations: [ PharmacistComponent,MedicineListComponent, PatientVMListComponent, PatientMedicineVMListComponent, HomeComponent, PPharmacistBillComponent],
+  declarations: [ PharmacistComponent,MedicineListComponent, PatientVMListComponent, PatientMedicineVMListComponent, HomeComponent],
   imports: [
     CommonModule,
     PPharmacistRoutingModule,

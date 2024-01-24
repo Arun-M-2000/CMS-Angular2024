@@ -14,6 +14,15 @@ export class PatientMedicineVMListComponent implements OnInit {
   billDetails: any = {};
   AppointmentId:number;
   gst:number=0.08;
+  listPatientRecord = [];
+  unitPrice: number;
+  totalAmount: number;
+  patientname:string;
+ 
+  billContent:string;
+  dialog:any;
+  viewClicked: boolean;
+  
   constructor(
     public ppatientsMedViewModelService: PPatientsMedViewModelService,
     private route: ActivatedRoute,  private router: Router 
@@ -84,5 +93,17 @@ export class PatientMedicineVMListComponent implements OnInit {
        
     this.router.navigate(['/p-pharmacist/patientmedicine-list/'+AppointmentId]);
   }
+
+  getViewPatient(patient): void {
+    this.viewClicked = true;
+    this.listPatientRecord.push(patient);
+  }
+
+
+  getCurrentDate(): string {
+    const currentDate = new Date();
+    return currentDate.toLocaleDateString();
+  }
+
 
 }

@@ -78,7 +78,7 @@ logincredentials() {
         }
         else if (response.rId == 5) {
           this.router.navigateByUrl('p-pharmacist/home');
-          console.log('receptionist')
+          console.log('pharmacist')
         }
         else {
           this.error = "You are not allowed"
