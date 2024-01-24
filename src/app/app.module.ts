@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,7 +33,10 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+
+    AppComponent,
+    
+
     
   ],
   imports: [
@@ -43,6 +48,7 @@ import { FormsModule } from '@angular/forms';
         positionClass: 'toast-top-right',
         preventDuplicates: true
       }),
+
 
     NgxPaginationModule,
     Ng2SearchPipeModule,
@@ -61,6 +67,7 @@ import { FormsModule } from '@angular/forms';
       ReactiveFormsModule,
 
       FormsModule
+
 
   ],
   providers: [],
