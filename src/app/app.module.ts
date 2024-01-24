@@ -8,7 +8,11 @@ import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ToastrModule.forRoot(
       {
       timeOut:10000,
@@ -24,7 +29,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       preventDuplicates:true
       }),
       NgxPaginationModule,
-      Ng2SearchPipeModule
+      Ng2SearchPipeModule,
+      FormsModule,
+      ReactiveFormsModule,
+      BrowserAnimationsModule
+      
+
+      
       
   ],
   providers: [],
