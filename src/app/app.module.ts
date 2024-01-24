@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { FormsModule } from '@angular/forms';
 
@@ -18,31 +18,62 @@ import { FormsModule } from '@angular/forms';
 
 
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CommonModule } from '@angular/common';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { FormsModule } from '@angular/forms';
 
 
+
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+
+    AppComponent,
+    
+
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ToastrModule.forRoot(
       {
-      timeOut:10000,
-      positionClass:'toast-top-right',
-      preventDuplicates:true
+        timeOut: 10000,
+        positionClass: 'toast-top-right',
+        preventDuplicates: true
       }),
-      NgxPaginationModule,
-      Ng2SearchPipeModule,
-      HttpClientModule,
-      ReactiveFormsModule,
-      FormsModule
-    
 
-      
+
+
+
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    CommonModule,
+ 
+      ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

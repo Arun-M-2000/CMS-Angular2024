@@ -1,0 +1,50 @@
+<br>
+
+<h1 style="text-align: center;">Medicine Management</h1><br>
+
+<div class="container">
+    
+    <div class="header">
+        <div class="form-control">
+            <input class="form-control" type="text"placeholder="search text here..."
+            [(ngModel)]="filter">
+        </div><br>
+        <a [routerLink]="['../add-medicine']" class="btn btn-success" style="float: right; margin-bottom: 30px;">Add Medicine</a>
+    </div>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>MedicineId</th> 
+            <th>MedicineCode</th>
+            <th>MedicineName</th>
+            <th>GenericName</th>
+            <th>CompanyName</th>
+            <th>StockQuantity</th>
+            <th>UnitPrice</th>
+            <th>Action</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let med of medicineService.medicine |filter:filter|paginate:{itemsPerPage:8,currentPage:page} ">
+            <td>{{med.MedicineId}}</td> 
+            <td>{{med.MedicineCode}}</td>
+            <td>{{med.MedicineName}}</td>
+            <td>{{med.GenericName}}</td>
+            <td>{{med.CompanyName}}</td>
+            <td>{{med.StockQuantity}}</td>
+            <td>{{med.UnitPrice}}</td>
+            
+           
+            <td>
+                <button class="btn btn-sm btn-info" (click)="UpdateMedicine(med.MedicineId) ">Edit</button>&nbsp;
+                <button class="btn btn-sm btn-danger"style="margin-left: 10px;"(click)="DeleteMedicine(med.MedicineId)">Delete</button>
+                
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="footer" style="text-align: center;">
+    <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+</div>
