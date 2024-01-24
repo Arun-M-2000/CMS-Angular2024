@@ -1,15 +1,19 @@
 export class DDiagnosisViewModel {
 
-    Appointment_Id: number=0;
+DiagnosisId:number=0;
 Symptoms: string=null;
-Diag_Descrip: string=null;
-Doct_Notes: string=null;
-Medpres_Name: string=null;
-Medpres_Dosage: string=null;
-Medpres_Dosagedays: number=0;
-Medpres_Quantity: number=0;
-LabTest_Name: string=null;
-Lab_Note: string=null;
+Diagnosis1: string=null;
+Note:string=null;
+AppointmentId: number=0;
+LabPrescriptionId:number=0;
+LabTestId:number=0;
+LabNote: string=null;
+LabTestStatus:string=null;
+MedPrescriptionId:number=0;
+PrescribedMedicineId:number=0;
+Dosage:string=null;
+DosageDays:number=0;
+MedicineQuantity:number=0;
 
 
 }

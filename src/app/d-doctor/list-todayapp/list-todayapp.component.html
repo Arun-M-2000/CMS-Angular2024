@@ -1,0 +1,74 @@
+
+
+<style>
+  :root {
+    --heading-color: #4CAF50; /* Default Text color */
+    --shadow-color: #ff9800; /* Default Shadow color */
+    --font-size:30px; /* Default Font size */
+  }
+
+  .heading-3d {
+    text-align: center;
+    font-size: var(--font-size);
+    margin-bottom: 20px;
+    position: relative;
+    color: var(--heading-color);
+  }
+
+  .heading-3d::before,
+  .heading-3d::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--shadow-color);
+    overflow: hidden;
+    clip: rect(0, auto, auto, 0);
+  }
+
+  .heading-3d::before {
+    z-index: -1;
+    text-shadow: -2px -2px 2px rgba(255, 255, 255, 0.7);
+  }
+
+  .heading-3d::after {
+    z-index: -2;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+</style>
+
+
+
+
+<body>
+  <div class="container">
+    <h2 class="mb-4 heading-3d" data-text="Appointments" style="font-size: 30px;font-weight:bold; margin: 30px;">Appointments</h2>
+    <table class="table table-bordered table-striped " style="width: 1000px; margin: auto; margin-bottom: 100px">
+      <thead class="thead-dark bg-danger btn-primary">
+        <tr>
+          <th>AppointmentId</th>
+          <th>Token No</th>
+          <th>PatientName</th>
+          <th>AppointmentDate</th>
+          <th>CheckUpStatus</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of dappointmentViewModelService.appointments">
+          <td>{{ p.Appointment_Id }}</td>
+          <td>{{ p.Token_No }}</td>
+          <td>{{ p.Patient_Name }}</td>
+          <td>{{ p.Appointment_Date | date:'dd-MMM-yyyy' }}</td>
+          <td>{{ p.CheckUp_Status }}</td>
+          <td>
+            <button class="btn btn-info btn-danger bg-danger" (click)="goto(p.Appointment_Id)">
+              View
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
