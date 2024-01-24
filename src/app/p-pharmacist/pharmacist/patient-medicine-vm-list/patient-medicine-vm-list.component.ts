@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PPatientsMedViewModelService } from 'src/app/Shared/ppatients-med-view-model.service';
+import { Router } from '@angular/router'; // Import the Router module
 
 @Component({
   selector: 'app-patient-medicine-vm-list',
@@ -11,13 +12,17 @@ export class PatientMedicineVMListComponent implements OnInit {
   regNo: string | null = null;
   showBillModal: boolean = false;
   billDetails: any = {};
-
+  AppointmentId:number;
+  gst:number=0.08;
   constructor(
     public ppatientsMedViewModelService: PPatientsMedViewModelService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,  private router: Router 
   ) { }
 
   ngOnInit(): void {
+    this.AppointmentId = this.route.snapshot.params['AppointmentId'];
+
+   this.ppatientsMedViewModelService.BindListPatientMedicine(this.AppointmentId) 
     this.route.params.subscribe(params => {
       this.regNo = params['regNo'];
       if (this.regNo) {
@@ -35,15 +40,32 @@ export class PatientMedicineVMListComponent implements OnInit {
   }
 
   generateBill(pat: any): void {
+    this.ppatientsMedViewModelService.formData.PatientName = pat.PatientName;
     this.billDetails = {
+      
       billDate: new Date().toLocaleDateString(),
-      patientName: pat.PatientName,
+      
+      
       medicineName: pat.PrescribedMedicine,
-      quantity: pat.DosageDays, // Update with the correct property
-      unitPrice: pat.MedicineQuantity, // Update with the correct property
-      gst: pat.MedicineQuantity * 0.08, // Assuming 8% GST
-      totalPrice: pat.MedicineQuantity * pat.DosageDays // Update with the correct property
+      quantity: pat.MedicineQuantity, // Update with the correct property
+      unitPrice: pat.UnitPrice, // Update with the correct property
+      gst: pat.MedicineQuantity *  pat.UnitPrice * 0.08, // Assumin g 8% GST
+      totalPrice: (pat.MedicineQuantity * pat.UnitPrice )+this.gst  
+           //Update with the correct propertyty
+           
+    
+      // this.purchaseService.formData.PurchaseOrderNumber = purchase.PurchaseOrderNumber;
+      // this.purchaseService.formData.ItemName = purchase.ItemName;
+      // this.purchaseService.formData.Quantity = purchase.Quantity;
+      // this.purchaseService.formData.OrderDate = purchase.OrderDate;
+      // this.purchaseService.formData.DeliveryDate = purchase.DeliveryDate;
+      // this.purchaseService.formData.Status = purchase.Status;
+      // this.purchaseService.formData.CId = purchase.CId;
+      // this.purchaseService.formData.VId = purchase.VId;
+      //     this.router.navigate(['/edit',purchase]);
     };
+    
+
 
     // Show the bill modal
     this.showBillModal = true;
@@ -58,4 +80,9 @@ export class PatientMedicineVMListComponent implements OnInit {
     // Hide the bill modal
     this.showBillModal = false;
   }
+  view(AppointmentId:number) {
+       
+    this.router.navigate(['/p-pharmacist/patientmedicine-list/'+AppointmentId]);
+  }
+
 }

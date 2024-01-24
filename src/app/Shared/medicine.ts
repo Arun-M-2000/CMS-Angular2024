@@ -5,5 +5,7 @@ export class Medicine {
     GenericName: String='';
     CompanyName: String='';
     StockQuantity: String='';
+
     UnitPrice: number=0;  
+
 }

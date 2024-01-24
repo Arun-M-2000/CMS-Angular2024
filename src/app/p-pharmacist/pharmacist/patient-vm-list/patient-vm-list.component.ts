@@ -37,15 +37,9 @@ export class PatientVMListComponent implements OnInit {
     }
   }
 
-  view(pat:any):void {
-    this.ppatientsViewModelService.formData.RegNo= pat.RegNo;
-    this.ppatientsViewModelService.formData.PatientName = pat.PatientName;
-    this.PPatientsMedViewModel.formData.PrescribedMedicine = pat.PrescribedMedicine;
-    this.PPatientsMedViewModel.formData.Dosage = pat.Dosage;
-    this.PPatientsMedViewModel.formData.DosageDays = pat.DosageDays;
-    this.PPatientsMedViewModel.formData.MedicineQuantity = pat.MedicineQuantity;
-    
-    this.router.navigate(['/p-pharmacist/patientmedicine-list',pat]);
+  view(AppointmentId:number) {
+       
+    this.router.navigate(['/p-pharmacist/patientmedicine-list/'+AppointmentId]);
   }
 
   
