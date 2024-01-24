@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -31,6 +34,9 @@ import { FormsModule } from '@angular/forms';
 
 
 
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
 
@@ -42,12 +48,14 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ToastrModule.forRoot(
       {
         timeOut: 10000,
         positionClass: 'toast-top-right',
         preventDuplicates: true
       }),
+
 
 
     NgxPaginationModule,
