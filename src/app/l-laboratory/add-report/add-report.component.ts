@@ -63,7 +63,7 @@ generateReport() {
 this.router.navigate(['/l-laboratory/report']);
 }
 
-goBack() {
+back() {
   this.router.navigate(['/l-laboratory/list']);
 }
 }

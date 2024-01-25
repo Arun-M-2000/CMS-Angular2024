@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pharmacymedicine } from 'src/app/Shared/pharmacymedicine';
 import { PharmacymedicineService } from 'src/app/Shared/pharmacymedicine.service';
 
@@ -11,7 +12,7 @@ export class MedicineListComponent implements OnInit {
   searchTerm: string = '';
   medicinesFound: boolean = true;
 
-  constructor(public pharmacymedicineService: PharmacymedicineService) { }
+  constructor(public pharmacymedicineService: PharmacymedicineService,private router: Router) { }
 
   ngOnInit(): void {
     console.log("Medicine Management");
@@ -36,4 +37,9 @@ export class MedicineListComponent implements OnInit {
       medicine.reordered = true;
     }
   }
+
+  back(){
+    this.router.navigateByUrl("p-pharmacist/home");
+      }
+
 }

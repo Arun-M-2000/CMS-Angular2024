@@ -31,6 +31,7 @@ export class EditMedicineComponent implements OnInit {
       }, error => console.log(error));
 
   }
+  
 }
 
 

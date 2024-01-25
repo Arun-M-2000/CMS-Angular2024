@@ -40,4 +40,8 @@ export class ListLabComponent implements OnInit {
   console.log(err)
   });
   }
+
+  back(){
+    this.router.navigateByUrl("a-home/adminhome");
+      }
 }

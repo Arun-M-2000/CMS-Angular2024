@@ -86,7 +86,7 @@ logincredentials() {
       },
       error=>{
         console.log(error);
-        this.error="Invaild UseerNAme or password"
+        this.error="Invaild User Name or Password"
       }
     )
 

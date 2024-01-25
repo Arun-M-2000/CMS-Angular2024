@@ -33,7 +33,7 @@ printLabReport() {
   alert('Please connect the printer.');
   window.print();
 }
-goBack() {
+back() {
   this.router.navigate(['/l-laboratory/report']);
   }
 

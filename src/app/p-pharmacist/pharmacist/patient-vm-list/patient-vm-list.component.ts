@@ -41,6 +41,8 @@ export class PatientVMListComponent implements OnInit {
        
     this.router.navigate(['/p-pharmacist/patientmedicine-list/'+AppointmentId]);
   }
-
+  back(){
+    this.router.navigateByUrl("p-pharmacist/home");
+      }
   
 }

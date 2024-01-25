@@ -28,5 +28,8 @@ filter: number;
     console.log(staffId);
     this.router.navigate(['a-staff/edit-staff', staffId]);
   }
-
+  back(){
+    this.router.navigateByUrl("a-home/adminhome");
+      }
 }
+

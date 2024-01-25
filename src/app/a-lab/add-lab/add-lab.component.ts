@@ -68,7 +68,9 @@ export class AddLabComponent implements OnInit {
   }
 
  
-
+  back(){
+    this.router.navigateByUrl("a-lab/list-lab");
+      }
   
 
 

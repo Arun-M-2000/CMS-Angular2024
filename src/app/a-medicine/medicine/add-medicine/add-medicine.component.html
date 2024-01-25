@@ -25,7 +25,7 @@
     <div class="form-group">
         <label>Medicine Name &nbsp;</label>
         <input name="MedicineName" #MedicineName="ngModel" [(ngModel)]="medicineservice.formData.MedicineName"
-            class="form-control" placeholder="Medicine Name" minlength="3" maxlength="25" required pattern="^[a-zA-Z]+$"
+            class="form-control" placeholder="Medicine Name"  required pattern="^[a-zA-Z]+$"
             [ngClass]="{'is-invalid': MedicineName.touched && MedicineName.invalid}">
 
         <div class="Validation-error" *ngIf="MedicineName.touched && MedicineName.invalid">
@@ -39,7 +39,7 @@
     <div class="form-group">
         <label>Generic Name&nbsp;</label>
         <input name="GenericName" #GenericName="ngModel" [(ngModel)]="medicineservice.formData.GenericName"
-            class="form-control" placeholder="Enter Generic Name" minlength="3" maxlength="25" required
+            class="form-control" placeholder="Enter Generic Name"  required
             pattern="^[a-zA-Z]+$">
 
         <div class="Validation-error" *ngIf="GenericName.touched && GenericName.invalid">
@@ -53,7 +53,7 @@
     <div class="form-group">
         <label>Company Name&nbsp;</label>
         <input name="CompanyName" #CompanyName="ngModel" [(ngModel)]="medicineservice.formData.CompanyName"
-            class="form-control" placeholder="Enter Company Name" minlength="3" maxlength="25" required
+            class="form-control" placeholder="Enter Company Name"  required
             pattern="^[a-zA-Z]+$" [ngClass]="{'is-invalid': CompanyName.touched && CompanyName.invalid}">
 
         <div class="Validation-error" *ngIf="CompanyName.touched && CompanyName.invalid">
@@ -67,7 +67,7 @@
     <div class="form-group">
         <label>Stock Quantity&nbsp;</label>
         <input name="StockQuantity" #StockQuantity="ngModel" [(ngModel)]="medicineservice.formData.StockQuantity"
-            class="form-control" placeholder="Enter Stock Quantity" minlength="1" maxlength="25" required
+            class="form-control" placeholder="Enter Stock Quantity"  required
             pattern="^\d+$" [ngClass]="{'is-invalid': StockQuantity.touched && StockQuantity.invalid}">
 
         <div class="Validation-error" *ngIf="StockQuantity.touched && StockQuantity.invalid">
@@ -81,7 +81,7 @@
     <div class="form-group">
         <label>Unit Price&nbsp;</label>
         <input name="UnitPrice" #UnitPrice="ngModel" [(ngModel)]="medicineservice.formData.UnitPrice"
-            class="form-control" placeholder="Enter Unit Price" minlength="1" maxlength="25" required
+            class="form-control" placeholder="Enter Unit Price"  required
             pattern="^\d+(\.\d{1,2})?$" [ngClass]="{'is-invalid': UnitPrice.touched && UnitPrice.invalid}">
 
         <div class="Validation-error" *ngIf="UnitPrice.touched && UnitPrice.invalid">
@@ -97,3 +97,6 @@
             class="btn btn-lg btn-primary form-control">Submit</button>
     </div>
 </form>
+<div class="d-flex justify-content-end" style="margin:20px;">
+    <button  class="details btn btn-info btn-danger " (click)="back()">Back</button>
+  </div>

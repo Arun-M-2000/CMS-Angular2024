@@ -67,6 +67,8 @@ export class AddMedicineComponent implements OnInit {
       form.resetForm();
     }
   }
-
+  back(){
+    this.router.navigateByUrl("a-medicine/list-medicine");
+      }
 
 }

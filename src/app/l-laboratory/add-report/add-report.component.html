@@ -28,10 +28,10 @@
   
     <!-- Lab Report Section -->
      <div class="row">
-      <div class="col-md-6 mb-3">
-        <label for="reportId">ReportId:</label>
+      <!-- <div class="col-md-6 mb-3">
+        <label  for="reportId">ReportId:</label>
         <input type="text" id="labreportId" name="labreportId" [(ngModel)]="lLabReportVMService.formData.ReportId" class="form-control" required>
-      </div> 
+      </div>  -->
   
       <div class="col-md-6 mb-3">
         <label for="reportDate">ReportDate:</label>
@@ -54,5 +54,10 @@
     <button type="submit" class="btn btn-primary"(click)="generateReport()">Submit</button>
     
   </form>
-  <div><button (click)="goBack()">Back</button></div>
+
+
+  <div class="d-flex justify-content-end" style="margin:20px;">
+    <button  class="details btn btn-info btn-danger" (click)="back()">Back</button>
+  </div>
+  
   

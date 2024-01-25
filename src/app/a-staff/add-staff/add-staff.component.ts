@@ -14,7 +14,18 @@ import { StaffDetailsViewModel } from 'src/app/Shared/staff-details-view-model';
   styleUrls: ['./add-staff.component.scss']
 })
 export class AddStaffComponent implements OnInit {
+  getMinDate(): string {
+    // Set the minimum date to an appropriate value
+    // For example, assuming the minimum allowed date is January 1, 1900
+    return '1900-01-01';
+  }
 
+  getMaxDate(): string {
+    // Set the maximum date to 2001-12-31
+    return '2001-12-31';
+  }
+
+  
   constructor(public staffdetailsVMservice:StaffDetailsViewModelService,
     public staffService:StaffService,
     private router: Router,
@@ -73,6 +84,9 @@ export class AddStaffComponent implements OnInit {
     }
   }
 
-
-  
+  back(){
+    this.router.navigateByUrl("a-staff/list-staff");
+      }
 }
+  
+

@@ -38,7 +38,9 @@ export class ListReportComponent implements OnInit {
     this.router.navigate(['/l-laboratory/view',lab])
 
   }
-
+back() {
+  this.router.navigate(['/l-laboratory/list']);
+}
     
 
 }

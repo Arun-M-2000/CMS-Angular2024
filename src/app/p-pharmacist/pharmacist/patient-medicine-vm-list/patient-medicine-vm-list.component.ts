@@ -104,6 +104,13 @@ export class PatientMedicineVMListComponent implements OnInit {
     const currentDate = new Date();
     return currentDate.toLocaleDateString();
   }
-
+  back(){
+    this.router.navigateByUrl("p-pharmacist/patient-list");
+      }
+      printLabReport() {
+        // You can implement the print logic here
+        alert('Please connect the printer.');
+        window.print();
+      }
 
 }

@@ -37,5 +37,7 @@ export class ListMedicineComponent implements OnInit {
   console.log(err)
   });
   }
-
+  back(){
+    this.router.navigateByUrl("a-home/adminhome");
+      }
 }
