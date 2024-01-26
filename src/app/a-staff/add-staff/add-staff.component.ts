@@ -64,8 +64,6 @@ export class AddStaffComponent implements OnInit {
     )
   }
 
-
-
   UpdateRecord(form: NgForm){
     console.log("Updating");
     this.staffService.updatestaff(form.value).subscribe(

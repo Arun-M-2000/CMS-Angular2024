@@ -10,8 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -20,20 +18,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
-
-
-
-
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-
-    AppComponent,
-    
-
-    
+    AppComponent,  
   ],
   imports: [
     BrowserModule,
@@ -45,10 +34,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         positionClass: 'toast-top-right',
         preventDuplicates: true
       }),
-
-
-
-
     NgxPaginationModule,
     Ng2SearchPipeModule,
     HttpClientModule,
@@ -62,9 +47,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatNativeDateModule,
     MatSelectModule,
     CommonModule,
- 
-      ReactiveFormsModule,
-
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
