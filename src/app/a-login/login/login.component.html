@@ -1,10 +1,12 @@
-<div class="container mx-auto" style="max-width: 500px; margin-top: 100px; margin-bottom:100px;">
+<div class="logo">
+  <img src="/assets/images/loginlogol.jpg">
+  <div class="container mx-auto login-container">
     <h2 style="text-align: center;">User Login</h2>
     <hr>
     <form [formGroup]="loginForm" class="formControl" (ngSubmit)="logincredentials()">
       <!-- username -->
       <div class="mb-3">
-        <label for="UserName" class="form-label">User Name</label>
+        <label for="UserName" class="form-label text-white">User Name</label>
         <input type="text" placeholder="Enter username" name="UserName" formControlName="UserName" class="form-control" minlength="3" [ngClass]="{'is-invalid': formControls.UserName.touched && formControls.UserName.invalid}">
         <div *ngIf="isSubmitted && formControls.UserName.errors" class="invalid-feedback">
           <div *ngIf="formControls.UserName.errors.required">
@@ -15,7 +17,7 @@
   
       <!-- Password -->
       <div class="mb-3">
-        <label for="Password" class="form-label">Password</label>
+        <label for="Password" class="form-label text-white">Password</label>
         <input type="password" placeholder="Enter Password" name="Password" formControlName="Password" class="form-control" minlength="3" [ngClass]="{'is-invalid': formControls.Password.touched && formControls.Password.invalid}">
         <div *ngIf="isSubmitted && formControls.Password.errors" class="invalid-feedback">
           <div *ngIf="formControls.Password.errors.required">
@@ -25,11 +27,13 @@
       </div>
   
       <!-- Login button -->
-      <button type="submit" class="btn btn-primary">Login</button>
-  
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-success">Login</button>
+    </div>
+      
       <div *ngIf="error" style="color:red; text-align: left;">
         {{ error }}
       </div>
     </form>
   </div>
-  
+</div>

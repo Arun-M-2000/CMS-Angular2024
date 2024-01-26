@@ -1,0 +1,40 @@
+img{
+    height:100vh;
+    width:100%;
+}
+
+.logo {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width:100%;
+}
+.logo {
+    position: relative;
+}
+
+.logo-txt {
+    position: absolute;
+    top:40%;
+    left:-25%;
+    width: 100%;
+    text-align: center; /* Optional: Adjust text alignment as needed */
+    color: rgb(24, 85, 22); /* Optional: Adjust text color for better visibility */
+    padding: 20px; /* Optional: Add padding for better readability */
+    box-sizing: border-box; /* Optional: Include padding in the width */
+    font-family:cursive; /* Optional: Specify font family */
+    font-size: 60px; /* Optional: Adjust font size */
+    z-index: 1;
+    font-weight: bold;
+}
+.logo-txt button{
+    border: none;
+    background-color:rgb(5, 52, 21);
+    width:fit-content;
+    font-size: 20px;
+    color: white;
+    padding: 14px;
+    border-radius: 5px;
+    font-weight: bold;
+ 
+}
