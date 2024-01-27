@@ -21,4 +21,21 @@
     background-color: rgb(4, 49, 5);
   }
   
+  .back-btn{
 
+    position: relative;
+    bottom:200px;
+    right: 30px;
+    text-align: end;
+}
+.back-btn button{
+    padding:10px;
+    border:none;
+    border-radius: 5px;
+    background-color: rgb(12, 102, 161);
+    color: white;
+    font-weight: bold;
+}
+.back-btn button:hover{
+  scale:1.2;
+}

@@ -14,7 +14,7 @@ export class VenusHomeComponent implements OnInit {
   }
 
 login(){
-  this.router.navigate(["login/log"])
+  this.router.navigate(["homes/whole"]);
 }
 
 

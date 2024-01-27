@@ -1,39 +1,76 @@
 <div class="logo">
-  <img src="/assets/images/loginlogol.jpg">
+  <img src="/assets/images/loginlogol.jpg" />
   <div class="container mx-auto login-container">
-    <h2 style="text-align: center;">User Login</h2>
-    <hr>
-    <form [formGroup]="loginForm" class="formControl" (ngSubmit)="logincredentials()">
+    <h2 style="text-align: center">User Login</h2>
+    <hr />
+    <form
+      [formGroup]="loginForm"
+      class="formControl"
+      (ngSubmit)="logincredentials()"
+    >
       <!-- username -->
       <div class="mb-3">
         <label for="UserName" class="form-label text-white">User Name</label>
-        <input type="text" placeholder="Enter username" name="UserName" formControlName="UserName" class="form-control" minlength="3" [ngClass]="{'is-invalid': formControls.UserName.touched && formControls.UserName.invalid}">
-        <div *ngIf="isSubmitted && formControls.UserName.errors" class="invalid-feedback">
+        <input
+          type="text"
+          placeholder="Enter username"
+          name="UserName"
+          formControlName="UserName"
+          class="form-control"
+          minlength="3"
+          [ngClass]="{
+            'is-invalid':
+              formControls.UserName.touched && formControls.UserName.invalid
+          }"
+        />
+        <div
+          *ngIf="isSubmitted && formControls.UserName.errors"
+          class="invalid-feedback"
+        >
           <div *ngIf="formControls.UserName.errors.required">
             User Name is required
           </div>
         </div>
       </div>
-  
+
       <!-- Password -->
       <div class="mb-3">
         <label for="Password" class="form-label text-white">Password</label>
-        <input type="password" placeholder="Enter Password" name="Password" formControlName="Password" class="form-control" minlength="3" [ngClass]="{'is-invalid': formControls.Password.touched && formControls.Password.invalid}">
-        <div *ngIf="isSubmitted && formControls.Password.errors" class="invalid-feedback">
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="Password"
+          formControlName="Password"
+          class="form-control"
+          minlength="3"
+          [ngClass]="{
+            'is-invalid':
+              formControls.Password.touched && formControls.Password.invalid
+          }"
+        />
+        <div
+          *ngIf="isSubmitted && formControls.Password.errors"
+          class="invalid-feedback"
+        >
           <div *ngIf="formControls.Password.errors.required">
             Password is required
           </div>
         </div>
       </div>
-  
+
       <!-- Login button -->
       <div class="d-flex justify-content-center">
         <button type="submit" class="btn btn-success">Login</button>
-    </div>
-      
-      <div *ngIf="error" style="color:red; text-align: left;">
+      </div>
+
+      <div *ngIf="error" style="color: red; text-align: left">
         {{ error }}
       </div>
     </form>
+    
+  </div>
+  <div class="back-btn">
+    <button (click)="back()">Back</button>
   </div>
 </div>
+

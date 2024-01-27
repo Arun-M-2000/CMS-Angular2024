@@ -15,6 +15,7 @@ import { PatientComponent } from './r-patient/patient/patient.component';
 import{HomeComponent} from './a-home/home/home.component'
 import { LaboratoryComponent } from './l-laboratory/laboratory/laboratory.component';
 import { VenusHomeComponent } from './venus/venus-home/venus-home.component';
+import { VenusWholeLoginComponent } from './venus/venus-whole-login/venus-whole-login.component';
 
 const routes: Routes = [
   {path:'a-home',component:HomeComponent,
@@ -52,10 +53,13 @@ const routes: Routes = [
 
   //new routing for home pages
 
-  {path:'',component:VenusHomeComponent,
+  {path:'homes',component:VenusWholeLoginComponent,
   loadChildren:()=>import('./venus/venus.module').then(x=>x.VenusModule)
   },
 
+  {path:'',component:VenusHomeComponent,
+  loadChildren:()=>import('./venus/venus.module').then(x=>x.VenusModule)
+  },
 ];
 
 @NgModule({

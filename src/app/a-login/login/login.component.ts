@@ -93,5 +93,7 @@ logincredentials() {
   }
 }
 
-  
+back(){
+  this.router.navigateByUrl('homes/whole');
+    }
 }
