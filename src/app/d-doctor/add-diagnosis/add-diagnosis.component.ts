@@ -58,7 +58,7 @@ public medicineQuantity: number = 0;
     (result) => {
       console.log(result);
       this.ResetForm(form);
-      this.toastr.success('Diagnosis added successfully', 'Maple CMS 2024');
+      this.toastr.success('Diagnosis added successfully', 'VENUS CMS 2024');
       if (this.AppointmentID) {
         console.log("from patient history" + this.AppointmentID);
         this.router.navigate(['d-doctor/list']);
@@ -77,7 +77,7 @@ public medicineQuantity: number = 0;
  GenerateDosages(): string[] {
   const dosages = [];
 
-  for (let morning = 0; morning <= 2; morning++) {
+  for (let morning = 0; morning <= 1; morning++) {
     for (let noon = 0; noon <= 1; noon++) {
       for (let night = 0; night <= 1; night++) {
         const dosageString = `${morning}-${noon}-${night}`;

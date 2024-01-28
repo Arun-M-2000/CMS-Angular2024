@@ -1,0 +1,44 @@
+.view {
+    padding: 20px;
+    background-color: rgb(197, 43, 43);
+    border-radius: 10px;
+    text-align:justify;
+    margin: 20px;
+    color: rgb(255, 254, 254);
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 3px 2px 5px 0px rgba(255, 255, 255, 0.9);
+
+}
+
+.patient-info {
+    list-style: none;
+    padding: 0;
+}
+
+.patient-info li {
+    margin-bottom: 10px;
+}
+
+.patient-info strong {
+    margin-right: 5px;
+    font-weight: normal;
+}
+.back-btn{
+
+    position: relative;
+    bottom:-90px;
+    left:1200px;
+}
+.back-btn button{
+    padding:10px;
+    border:none;
+    border-radius: 5px;
+    background-color: rgb(12, 102, 161);
+    color: white;
+}
+h1{
+    font-family: cursive;
+    text-align: center;
+    font-weight:bold;
+}
