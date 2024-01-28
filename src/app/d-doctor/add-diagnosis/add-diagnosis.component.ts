@@ -61,7 +61,7 @@ public medicineQuantity: number = 0;
       this.toastr.success('Diagnosis added successfully', 'Maple CMS 2024');
       if (this.AppointmentID) {
         console.log("from patient history" + this.AppointmentID);
-        this.router.navigate(['d-doctor/detail', this.AppointmentID]);
+        this.router.navigate(['d-doctor/list']);
       }
     }
   )
@@ -107,9 +107,5 @@ ViewPatientDetails()
       this.router.navigate(['d-doctor/detail', this.AppointmentID]);
     }
   }
-
-
-
-
 
 }

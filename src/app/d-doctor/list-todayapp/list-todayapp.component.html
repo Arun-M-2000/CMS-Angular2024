@@ -1,43 +1,5 @@
 
 
-<style>
-  :root {
-    --heading-color: #4CAF50; /* Default Text color */
-    --shadow-color: #ff9800; /* Default Shadow color */
-    --font-size:30px; /* Default Font size */
-  }
-
-  .heading-3d {
-    text-align: center;
-    font-size: var(--font-size);
-    margin-bottom: 20px;
-    position: relative;
-    color: var(--heading-color);
-  }
-
-  .heading-3d::before,
-  .heading-3d::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: var(--shadow-color);
-    overflow: hidden;
-    clip: rect(0, auto, auto, 0);
-  }
-
-  .heading-3d::before {
-    z-index: -1;
-    text-shadow: -2px -2px 2px rgba(255, 255, 255, 0.7);
-  }
-
-  .heading-3d::after {
-    z-index: -2;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  }
-</style>
-
-
 
 
 <body>
