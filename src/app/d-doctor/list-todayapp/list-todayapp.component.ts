@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class ListTodayappComponent implements OnInit {
 
+  filter:any;
+
   constructor(public dappointmentViewModelService:DAppointmentViewModelService,private router: Router) { }
 
   ngOnInit(): void {

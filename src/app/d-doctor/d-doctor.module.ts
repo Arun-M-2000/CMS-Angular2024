@@ -8,6 +8,7 @@ import { DetailsPatientComponent } from './details-patient/details-patient.compo
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
 import { FormsModule } from '@angular/forms';
 import { AddDiagnosisComponent } from './add-diagnosis/add-diagnosis.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { AddDiagnosisComponent } from './add-diagnosis/add-diagnosis.component';
   imports: [
     CommonModule,
     DDoctorRoutingModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule,
+
   ]
 })
 export class DDoctorModule { }

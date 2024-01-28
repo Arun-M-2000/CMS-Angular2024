@@ -9,6 +9,8 @@ import {DPatientHistoryViewModelService} from 'src/app/Shared/dpatient-history-v
 })
 export class PatientHistoryComponent implements OnInit {
 
+  filter:any;
+
   PatientId:number;
 
   constructor(public dpatientHistoryViewModelService:DPatientHistoryViewModelService,public router:Router, public route:ActivatedRoute) { }

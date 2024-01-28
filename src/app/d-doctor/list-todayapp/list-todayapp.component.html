@@ -5,6 +5,9 @@
 <body>
   <div class="container">
     <h2 class="mb-4 heading-3d" data-text="Appointments" style="font-size: 30px;font-weight:bold; margin: 30px;">Appointments</h2>
+    <div class="form-control search-btn">
+      <input class="form-control" type="text" placeholder="Search name here" [(ngModel)]="filter">
+      </div>
     <table class="table table-bordered table-striped " style="width: 1000px; margin: auto; margin-bottom: 100px">
       <thead class="thead-dark bg-danger btn-primary">
         <tr>
@@ -17,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let p of dappointmentViewModelService.appointments">
+        <tr *ngFor="let p of dappointmentViewModelService.appointments|filter:filter">
           <td>{{ p.Appointment_Id }}</td>
           <td>{{ p.Token_No }}</td>
           <td>{{ p.Patient_Name }}</td>
