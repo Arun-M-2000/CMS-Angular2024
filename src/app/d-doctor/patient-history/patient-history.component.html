@@ -3,6 +3,11 @@
 
   <div class="container">
     <h2 class="mb-4 text-center" style="font-size: 30px;font-weight:bold; margin: 30px;">Patient History</h2>
+
+    <div class="form-control search-btn">
+      <input class="form-control" type="text" placeholder="Search name here" [(ngModel)]="filter">
+      </div>
+    
     <table class="table table-bordered table-striped" style="margin-bottom:50px;">
       <thead class="thead-dark bg-danger text-white">
         <tr>
@@ -16,7 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let p of dpatientHistoryViewModelService.pathis">
+        <tr *ngFor="let p of dpatientHistoryViewModelService.pathis|filter:filter">
           <td>{{ p.appointment_Date | date:'dd-MMM-yyyy' }}</td>
           <td>{{ p.symptoms }}</td>
           <td>{{ p.diagnosis_Desc }}</td>
