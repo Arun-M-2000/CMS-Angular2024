@@ -28,3 +28,17 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.back-btn{
+
+  position: relative;
+  bottom:0px;
+  left:700px;
+}
+.back-btn button{
+  padding:10px;
+  border:none;
+  border-radius: 5px;
+  background-color: rgb(12, 102, 161);
+   color: white;
+}

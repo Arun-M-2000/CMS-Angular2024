@@ -4,7 +4,7 @@
         {{title}}</h2>
 </div>
 <table class="table table-bordered table-striped" style="margin-top: 80px;">
-    <thead style="background-color: red;color: white;">
+    <thead style="background-color: rgb(155, 36, 36);color: white;">
         <tr>
             <th>ID</th>
             <th>PatientName</th>
@@ -15,7 +15,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let lab of lPrescriptionViewModelService.lPrescriptionVM;
+        <tr *ngFor="let lab of lLabTestsVMService.labtestVM;
         ">
         <td>{{lab.AppointmentId}}</td>
         <td>{{lab.PatientName}}</td>

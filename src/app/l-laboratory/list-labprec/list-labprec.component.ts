@@ -10,11 +10,11 @@ import{Router} from '@angular/router'
 export class ListLabprecComponent implements OnInit {
   title='Lab Test Prescriptions';
 
-  constructor(public lPrescriptionViewModelService:LPrescriptionViewModelService, private router:Router) { }
+  constructor(public lLabTestsVMService:LPrescriptionViewModelService, private router:Router) { }
 
   ngOnInit(): void {
     console.log('welcome to life cycle hook')
-    this.lPrescriptionViewModelService.BindListLabTestPrec();
+    this.lLabTestsVMService.BindListLabTestPrec();
     }
 
     goBack() {
@@ -22,10 +22,10 @@ export class ListLabprecComponent implements OnInit {
     }
   generateReport(lab:any) {
     // Assuming you want to pre-fill some fields in labreportService.formData_L
-    this.lPrescriptionViewModelService.formData.AppointmentId = lab.AppointmentId;
-    this.lPrescriptionViewModelService.formData.PatientName = lab.PatientName;
-    this.lPrescriptionViewModelService.formData.DoctorName = lab.DoctorName;
-    this.lPrescriptionViewModelService.formData.TestName = lab.TestName;
+    this.lLabTestsVMService.formData.AppointmentId = lab.AppointmentId;
+    this.lLabTestsVMService.formData.PatientName = lab.PatientName;
+    this.lLabTestsVMService.formData.DoctorName = lab.DoctorName;
+    this.lLabTestsVMService.formData.TestName = lab.TestName;
   
   // Navigate to the lab report form
   this.router.navigate(["l-laboratory/add",lab]);

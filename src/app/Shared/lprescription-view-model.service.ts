@@ -8,7 +8,7 @@ import {LPrescriptionViewModel} from '../shared/lprescription-view-model';
   providedIn: 'root'
 })
 export class LPrescriptionViewModelService {
-  lPrescriptionVM:LPrescriptionViewModel[];
+  labtestVM:LPrescriptionViewModel[];
 formData:LPrescriptionViewModel=new LPrescriptionViewModel;
 
   constructor(private httpClient:HttpClient) { }
@@ -17,7 +17,6 @@ formData:LPrescriptionViewModel=new LPrescriptionViewModel;
   {
     this.httpClient.get(environment.apiUrl + "/api/LlabTests")
     .toPromise().then(response =>{
-      this.lPrescriptionVM=response as LPrescriptionViewModel[];}
-);
+      this.labtestVM=response as LPrescriptionViewModel[];});
   }
 }

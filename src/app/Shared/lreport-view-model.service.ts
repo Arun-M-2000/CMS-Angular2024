@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LReportViewModelService {
-  lReportVM:LReportViewModel[];
+  lLabReportVM:LReportViewModel[];
   formData:LReportViewModel=new LReportViewModel();
 
   constructor(private httpClient:HttpClient) { }
@@ -17,32 +17,13 @@ export class LReportViewModelService {
   {
     this.httpClient.get(environment.apiUrl + "/api/LlabTests/List")
     .toPromise().then(response =>{
-      this.lReportVM=response as LReportViewModel[];
-      console.log(this.lReportVM);
+      this.lLabReportVM=response as LReportViewModel[];
+      console.log(this.lLabReportVM);
     });
   }
 
-  insertLabReport(lab: LReportViewModel):Observable<any>{
-    return this.httpClient.post(environment.apiUrl +"/api/LlabTests",lab)
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  //Add Employee  --INSERT
-  InsertEmployee(rep:LReportViewModel):Observable<any>
-  {
-    return this.httpClient.post(environment.apiUrl + "/api/LlabTests", rep);
-  }
+//   insertLabReport(lab: LReportViewModel):Observable<any>{
+//     return this.httpClient.post(environment.apiUrl +"/api/LlabTests",lab)
+//   }
   
 }
