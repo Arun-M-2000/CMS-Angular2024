@@ -14,7 +14,7 @@ export class PPatientsViewModelService {
   constructor(private httpClient: HttpClient) { }
 
   BindListPatients() {
-    this.httpClient.get(environment.apiUrl + "/api/PPatients/ViewModelGetPatientsList")
+    this.httpClient.get(environment.apiUrl + "/api/PPatients/ViewModelGetPatientsListToday")
       .toPromise().then(response =>
         this.patients = this.filteredPatients = response as PPatientsViewModel[]
       );

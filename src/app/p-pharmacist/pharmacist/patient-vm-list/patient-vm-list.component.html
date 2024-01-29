@@ -13,19 +13,21 @@
   <table *ngIf="patientsFound" class="table table-striped table-hover">
     <thead>
       <tr>
-        <th>RegNo</th>
-        <th>PatientName</th>
+        <th>Reg.No</th>
+        <th>Patient Name</th>
+        <th>Prescription Id</th>
         <th>Age</th>
         <th>Gender</th>
         <th>PhNo</th>
-        <th>DoctorName</th>
+        <th>Doctor Name</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let pat of ppatientsViewModelService.filteredPatients">
-        <td>{{pat.RegNo}}</td>
+        <td>{{pat.RegNo}}</td>  
         <td>{{pat.PatientName}}</td>
+        <td>{{pat.MedPrescriptionId}}</td>
         <td>{{pat.Age}}</td>
         <td>{{pat.Gender}}</td>
         <td>{{pat.PhNo}}</td>
