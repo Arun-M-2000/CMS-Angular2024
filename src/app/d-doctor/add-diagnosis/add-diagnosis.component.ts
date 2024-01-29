@@ -53,6 +53,7 @@ export class AddDiagnosisComponent implements OnInit {
         if (this.AppointmentID) {
           this.router.navigate(['d-doctor/list']);
         }
+
       }
     )
   }
@@ -66,12 +67,14 @@ export class AddDiagnosisComponent implements OnInit {
   GenerateDosages(): string[] {
     const dosages = [];
 
+
     for (let morning = 0; morning <= 1; morning++) {
       for (let noon = 0; noon <= 1; noon++) {
         for (let night = 0; night <= 1; night++) {
           const dosageString = `${morning}-${noon}-${night}`;
           dosages.push(dosageString);
         }
+
       }
     }
 
